@@ -1,32 +1,44 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@font-face {
+    font-family: "font";
+    src: url("../fonts/medium.ttf");
+}
 *{
     --gradient: linear-gradient(89.91deg, #A65DEF 0.06%, #EF5DA8 29.59%, #5D6CEF 61.74%, #5D5FEF 88.64%, #5DBAEF 117.5%);
-    --regular: 'Fira Sans', sans-serif;
+    --regular: "font";
 }
 body{
     margin: 0;
     -webkit-app-region: drag;
     padding: 0;
+    font-family: var(--regular);
     background-color: rgb(245, 239, 239);
 }
-.top__content {
+.app-header {
+    flex: 1;
+    position: relative;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     text-align: center;
 }
-.top__logo {
+.app-control{
+    position: absolute;
+    right: 0;
+
+}
+.app-logo {
     display: flex;
+    margin-left: 3vh;
     user-select: none;
     align-items: center;
 }
-.top__logo__part1 {
-    height: 10vh;
-    width: auto;
+.app-footer{
+    flex: 1;
+    height: 5vh;
+    width: 100%;
+    position: relative;
 }
-.top__logo__part2 {
+.logo {
     font-family: var(--regular);
     font-weight: 900;
     background: var(--gradient);
@@ -34,4 +46,82 @@ body{
     -webkit-text-fill-color: transparent;
     font-size: 3vh;
     margin-top: 1.5vh;
+}
+.app{
+    display: flex;
+    flex-direction: column;
+}
+.app-content{
+    flex: 2;
+    
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+}
+.auth-form-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form-btn{
+    border: none;
+    border-radius: 10px;
+    font-family: var(--regular);
+    padding: 2vh 3vh;
+    color: #fff;
+    width: 30vw;
+    font-size: 2.5vh;
+    margin-top: 2vh;
+    background-color: #A65DEF;
+}
+.form-btn:hover{
+    filter: brightness(0.9);
+}
+.form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 4vh;
+}
+.form-input{
+    padding: 2vh 3vh;
+    border: 1px solid #ccc;
+    outline: none;
+    margin: 1vh 0vh;
+    width: 30vw;
+    font-size: 2.5vh;
+    font-family: var(--regular);
+    border-radius: 20px;
+}
+.auth-form{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    width: 100%;
+    text-align: center;
+}
+.version{
+    color: rgb(186, 186, 186);
+    position: absolute;
+    right: 2vh;
+    bottom: 2vh;
+}
+.app-close img{
+    height: 4vh;
+}
+.app-control span{
+    position: absolute;
+    right: 2vh;
+    cursor: pointer;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: auto;
+}
+.app-control span:hover{
+    background-color: rgba(0,0,0,0.1);
 }

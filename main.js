@@ -9,6 +9,8 @@ function createWindow () {
     height: 800,
     productName: "AquaCloud",
     frame: false,
+    nodeIntegration: true,
+    contextIsolation: false,
     title: "AquaCloud",
     icon: "images/icon-mac.icns",
     webPreferences: {
@@ -20,7 +22,7 @@ function createWindow () {
   mainWindow.loadFile('index.html')
 
   // Разрешить веб тулс
-  // mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools()
 }
 app.whenReady().then(() => {
   createWindow()

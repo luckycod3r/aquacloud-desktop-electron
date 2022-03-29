@@ -1,18 +1,35 @@
 <!DOCTYPE html>
 <html>
   <head>
+    
     <meta charset="UTF-8">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
     <link href="./styles/styles.css" rel="stylesheet">
     <title>AquaCloud</title>
   </head>
-  <body>
-    <div class="top__content">
-      <div class="top__logo">
-        <img src="./images/logo.svg" class="top__logo__part1" draggable="false">
+  <body class="app" onk>
+    <div class="app-header">
+      <div class="app-logo">
+        <img src="./images/logo.svg" class="logo" draggable="false">
       </div>
-    </div> 
-     
-    <script src="./scripts/renderer.js"></script>
+      <div class="app-control">
+        <span class="app-hide"></span>
+        <span class="app-maximaze"></span>
+        <span class="app-close" id="close-btn" onClick="exitApp()"><img src="./images/exit.svg" alt=""></span>
+      </div>
+    </div>  
+     <div class="app-content auth-form-container">
+        <div class="auth-form">
+          <h1>Приветствуем!</h1>
+          <span>Чтобы начать использовать облако, войдите в аккаунт</span>
+          <div class="form">
+            <input type="text" id="login" class="form-input" placeholder="Логин">
+            <input type="password" id="password" class="form-input" placeholder="Пароль">
+            <button class="form-btn">Войти</button>
+          </div>
+        </div>
+     </div>
+     <span class="version">v0.1.1</span>
+     <script src="./scripts/renderer.js"></script>
   </body>
 </html>
