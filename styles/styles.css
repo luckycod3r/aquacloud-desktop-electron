@@ -28,6 +28,9 @@ body {
 .app-control {
     position: absolute;
     right: 0;
+    display: flex;
+    column-gap: 2vh;
+    -webkit-app-region: no-drag;
 }
 
 .app-logo {
@@ -148,8 +151,8 @@ body {
 }
 
 .app-mini-button img {
-    height: 4vh;
-    width: 4vh;
+    height: 2.5vh;
+    width: 2.5vh;
 }
 
 .app-link:hover svg {
@@ -168,7 +171,7 @@ body {
     bottom: 15vh;
 }
 
-.app-control span {
+.app-mini-button {
     position: relative;
     right: 2vh;
     cursor: pointer;
@@ -176,12 +179,8 @@ body {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    height: auto;
-    width: auto;
-}
-
-.app-control {
-    -webkit-app-region: no-drag;
+    height: 3vh;
+    width: 3vh;
 }
 
 .app-mini-button:hover {
