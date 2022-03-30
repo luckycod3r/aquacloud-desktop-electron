@@ -10,6 +10,7 @@ body{
     margin: 0;
     -webkit-app-region: drag;
     padding: 0;
+    
     font-family: var(--regular);
     background-color: rgb(245, 239, 239);
 }
@@ -50,10 +51,11 @@ body{
 .app{
     display: flex;
     flex-direction: column;
+    overflow-y: hidden;
 }
 .app-content{
     flex: 2;
-    
+    -webkit-app-region: no-drag;
     height: 100%;
     width: 100%;
     display: inline-block;
@@ -61,6 +63,8 @@ body{
 .auth-form-container{
     display: flex;
     align-items: center;
+    height: 100%;
+    width: 50%;
     justify-content: center;
 }
 .form-btn{
@@ -93,23 +97,43 @@ body{
     font-family: var(--regular);
     border-radius: 20px;
 }
+.image{
+    width: 50vh;
+    height: 150vh;
+    position: absolute;
+    z-index: -1;
+    right: 50vh;
+    bottom: 0;
+    transform: rotate(90deg);
+    background-image: "./images/bg.png";
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    flex: 1;
+    background-color: var(--gradient);
+}
 .auth-form{
     height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    
-    width: 100%;
+    flex: 1;
+    width: 50%;
     text-align: center;
 }
 .version{
     color: rgb(186, 186, 186);
     position: absolute;
+    -webkit-user-select: none;
     right: 2vh;
     bottom: 2vh;
 }
 .app-close img{
     height: 4vh;
+}
+.app-links{
+    position: absolute;
+    right: 2vh;
+    bottom: 15vh;
 }
 .app-control span{
     position: absolute;
@@ -124,4 +148,7 @@ body{
 }
 .app-control span:hover{
     background-color: rgba(0,0,0,0.1);
+}
+.app-close{
+    -webkit-app-region: no-drag;
 }

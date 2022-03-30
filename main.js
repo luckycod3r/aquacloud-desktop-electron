@@ -1,6 +1,13 @@
 
-const {app, BrowserWindow} = require('electron')
+const {app, BrowserWindow, ipcMain, net} = require('electron')
 const path = require('path')
+
+ipcMain.handle('login-app', () => {
+  console.log("login")
+});
+ipcMain.handle('quit-app', () => {
+  app.quit();
+});
 
 function createWindow () {
 
@@ -9,18 +16,18 @@ function createWindow () {
     height: 800,
     productName: "AquaCloud",
     frame: false,
-    nodeIntegration: true,
+    
     contextIsolation: false,
     title: "AquaCloud",
     icon: "images/icon-mac.icns",
     webPreferences: {
-      preload: path.join(__dirname, 'scripts/preload.js')
+      nodeIntegration: true,
+      preload: path.join(__dirname, 'scripts/node.js')
     }
   })
 
 
   mainWindow.loadFile('index.html')
-
   // Разрешить веб тулс
   mainWindow.webContents.openDevTools()
 }
@@ -28,8 +35,8 @@ app.whenReady().then(() => {
   createWindow()
 
   app.on('activate', function () {
-    
-    
+
+        
     if (BrowserWindow.getAllWindows().length === 0) createWindow()
   })
 })

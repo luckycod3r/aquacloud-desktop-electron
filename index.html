@@ -3,11 +3,14 @@
   <head>
     
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
+    
     <link href="./styles/styles.css" rel="stylesheet">
     <title>AquaCloud</title>
   </head>
-  <body class="app" onk>
+  <body class="app">
+    <div class="image">
+      <img src="./images/bg.png" alt="">
+    </div>
     <div class="app-header">
       <div class="app-logo">
         <img src="./images/logo.svg" class="logo" draggable="false">
@@ -15,7 +18,7 @@
       <div class="app-control">
         <span class="app-hide"></span>
         <span class="app-maximaze"></span>
-        <span class="app-close" id="close-btn" onClick="exitApp()"><img src="./images/exit.svg" alt=""></span>
+        <span class="app-close" id="close-btn"><img src="./images/exit.svg" alt=""></span>
       </div>
     </div>  
      <div class="app-content auth-form-container">
@@ -25,11 +28,16 @@
           <div class="form">
             <input type="text" id="login" class="form-input" placeholder="Логин">
             <input type="password" id="password" class="form-input" placeholder="Пароль">
-            <button class="form-btn">Войти</button>
+            <button class="form-btn" id="loginBtn">Войти</button>
           </div>
         </div>
+
+     </div>
+     <div class="app-links">
+       <a href="https://aquaclouds.ru"><img height="32" src="./images/site.svg" alt=""></a>
      </div>
      <span class="version">v0.1.1</span>
-     <script src="./scripts/renderer.js"></script>
+     <script src="./scripts/requests.js"></script>
+     <script src="./scripts/app.js"></script>
   </body>
 </html>
