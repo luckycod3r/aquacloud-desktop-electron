@@ -1,9 +1,21 @@
-// All of the Node.js APIs are available in the preload process.
-// It has the same sandbox as a Chrome extension.
-
-const { ipcRenderer, net} = require('electron');
+const { ipcRenderer, net, shell } = require('electron');
 window.addEventListener('DOMContentLoaded', () => {
-  document.querySelector('.app-close').addEventListener('click', () => {
-      ipcRenderer.invoke('quit-app');
-  });
+    document.querySelector('#close-btn').addEventListener('click', () => {
+        ipcRenderer.invoke('quit-app');
+
+    });
+    document.querySelector('#hide-btn').addEventListener('click', () => {
+        ipcRenderer.invoke('hide-app');
+    });
+    let links = document.querySelector('.app-link');
+
+    links.addEventListener('click', () => {
+        openLink(links.getAttribute("link"));
+    });
+
+
 })
+
+function openLink(link) {
+    shell.openExternal(link);
+}
